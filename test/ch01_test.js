@@ -4,6 +4,9 @@ const should = chai.should();
 
 const { isUnique, isUniqueNo } = require('../ch01/isUnique');
 const { checkPermutation } = require('../ch01/checkPermutation');
+const { urlify } = require('../ch01/urlify');
+const { palindromePermutation } = require('../ch01/palindromePermutation');
+const { oneAway } = require('../ch01/oneAway');
 
 describe('ch01', function() {
   describe('isUnique', function() {
@@ -28,6 +31,30 @@ describe('ch01', function() {
       checkPermutation('racecar', 'carrace').should.equal(true);
       checkPermutation('racecar', '').should.equal(false);
       checkPermutation('racecar', 'aaaaaaa').should.equal(false);
+    });
+  });
+
+  describe('URLify', function() {
+    it("should replace all spaces in a string with '%20'", function() {
+      urlify('Hello World').should.equal.to('Hello%20World');
+      urlify('What a nice day today      ').should.equal.to(
+        'What%20a%20nice%20day%20today'
+      );
+    });
+  });
+
+  describe('palindromePermutation', function() {
+    it('should check if it is a permutation of a palindrome', function() {
+      palindromePermutation('Tact Coa').should.equal(true);
+    });
+  });
+
+  describe('oneAway', function() {
+    it('should check if the two strings are one edit (or zero edits) away from each other', function() {
+      oneAway('pale', 'ple').should.equal(true);
+      oneAway('pales', 'pale').should.equal(true);
+      oneAway('pale', 'bale').should.equal(true);
+      oneAway('pale', 'bake').should.equal(false);
     });
   });
 });
