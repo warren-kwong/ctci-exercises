@@ -2,11 +2,14 @@ const chai = require('chai');
 
 const should = chai.should();
 
-const { isUnique, isUniqueNo } = require('../ch01/isUnique');
-const { checkPermutation } = require('../ch01/checkPermutation');
-const { urlify } = require('../ch01/urlify');
-const { palindromePermutation } = require('../ch01/palindromePermutation');
-const { oneAway } = require('../ch01/oneAway');
+const {
+  isUnique,
+  isUnique1,
+  checkPermutation,
+  urlify,
+  palindromePermutation,
+  oneAway
+} = require('../problems/ch01');
 
 describe('ch01', function() {
   describe('isUnique', function() {
@@ -19,9 +22,9 @@ describe('ch01', function() {
   describe('isUniqueNo', function() {
     // isUnique but constant space
     it('should check if the input string has all unique characters', function() {
-      isUniqueNo('abcdef').should.equal(true);
-      isUniqueNo('').should.equal(true);
-      isUnique('aaaaaa').should.equal(false);
+      isUnique1('abcdef').should.equal(true);
+      isUnique1('').should.equal(true);
+      isUnique1('aaaaaa').should.equal(false);
     });
   });
 
@@ -37,7 +40,7 @@ describe('ch01', function() {
   describe('URLify', function() {
     it("should replace all spaces in a string with '%20'", function() {
       urlify('Hello World').should.equal.to('Hello%20World');
-      urlify('What a nice day today      ').should.equal.to(
+      urlify('What a nice day today').should.equal.to(
         'What%20a%20nice%20day%20today'
       );
     });
