@@ -89,7 +89,7 @@ describe('ch01', function() {
       [9, 6, 3]
     ]
   
-    xit('', function() {
+    xit('should rotate the given matrix by 90 degrees', function() {
       rotateMatrix(matrix1).should.equal(matrix1answer);
     })
   });

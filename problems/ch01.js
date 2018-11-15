@@ -92,5 +92,8 @@ module.exports = {
   urlify,
   palindromePermutation,
   oneAway,
-  stringCompression
+  stringCompression,
+  rotateMatrix,
+  zeroMatrix,
+  stringRotation
 };
